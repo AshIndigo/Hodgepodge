@@ -33,6 +33,11 @@ dependencies {
     transformedMod(deobf("https://mediafiles.forgecdn.net/files/2423/369/BiblioCraft%5bv1.11.7%5d%5bMC1.7.10%5d.jar"))
     transformedMod(deobf("https://mediafiles.forgecdn.net/files/2367/915/journeymap-1.7.10-5.1.4p2-unlimited.jar"))
     transformedMod("curse.maven:minechem-368422:2905830")
+    transformedMod("curse.maven:forestry-59751:2333823")
+    transformedMod("curse.maven:binnie-223525:2467142")
+    transformedMod("curse.maven:botania-225643:2283837")
+    transformedMod("curse.maven:mystcraft-224599:2417042")
+    transformedMod("curse.maven:thermalexpansion-69163:2388758")
     transformedModCompileOnly(deobf('https://media.forgecdn.net/files/4127/328/XaerosWorldMap_1.14.1.22_Forge_1.7.10.jar'))
     transformedModCompileOnly("curse.maven:immersive-engineering-231951:2299019")
     transformedMod("com.github.GTNewHorizons:harvestcraft:1.0.19-GTNH:dev")
@@ -43,6 +48,8 @@ dependencies {
 
     transformedMod("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev")
     transformedMod(deobf("https://mediafiles.forgecdn.net/files/2285/272/Automagy-1.7.10-0.28.2.jar"))
+
+    transformedMod(fileTree(dir: "reika", include: '*.jar'))
 
     // Transitive updates to make runClient17 work
     transformedMod("com.github.GTNewHorizons:ForgeMultipart:1.3.2:dev")

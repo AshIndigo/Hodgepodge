@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 
 import com.mitchej123.hodgepodge.Common;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.relauncher.FMLLaunchHandler;
 
 public enum Mixins {
@@ -320,6 +321,57 @@ public enum Mixins {
     JAVA12_MINE_CHEM(
             new Builder("Minechem Java-12 safe potion array resizing").addMixinClasses("minechem.MixinPotionInjector")
                     .setApplyIf(() -> Common.config.java12MineChemCompat).addTargetedMod(TargetedMod.MINECHEM)),
+
+    // Reika time!
+    IE_METAL_PRESS(new Builder("ImmersiveEngineering MetalPress Accessor")
+            .addMixinClasses("immersiveengineering.MixinMetalPressRecipe")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore"))
+            .addTargetedMod(TargetedMod.IMMERSIVE_ENGINENEERING)),
+    IE_FERMENTER(new Builder("ImmersiveEngineering Squeezer Accessor")
+            .addMixinClasses("immersiveengineering.MixinSqueezerRecipe")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore"))
+            .addTargetedMod(TargetedMod.IMMERSIVE_ENGINENEERING)),
+    IE_SQUEEZER(new Builder("ImmersiveEngineering Fermenter Accessor")
+            .addMixinClasses("immersiveengineering.MixinFermenterRecipe")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore"))
+            .addTargetedMod(TargetedMod.IMMERSIVE_ENGINENEERING)),
+    IE_ARCFURNACE(new Builder("ImmersiveEngineering ArcFurance Accessor")
+            .addMixinClasses("immersiveengineering.MixinArcFurnaceRecipe")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore"))
+            .addTargetedMod(TargetedMod.IMMERSIVE_ENGINENEERING)),
+    DR_REFLECT_MANAGER(
+            new Builder("DragonRealm ReflectiveManagers").addMixinClasses("dragonrealm.MixinReflectiveManagers")
+                    .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.DRAGONREALM)),
+    DR_RECIPE_UTIL(new Builder("DragonRealm RecipeUtil").addMixinClasses("dragonrealm.MixinDRRecipeUtil")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.DRAGONREALM)),
+
+    DR_BEES(new Builder("DragonRealm DRBees").addMixinClasses("dragonrealm.MixinDRBees")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.DRAGONREALM)),
+
+    MYSTCRAFT_DESK_AUTOMATED(
+            new Builder("Make Mystcraft Desk automatable (DR Change)").addMixinClasses("mystcraft.MixinTileEntityDesk")
+                    .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.MYSTCRAFT)),
+    SMELTARY_SIZE_INCREASE(new Builder("Increase Smeltery Size (DR Change)")
+            .addMixinClasses("tconstruct.MixinSmelteryLogic").setApplyIf(() -> Loader.isModLoaded("DragonRealmCore"))
+            .addTargetedMod(TargetedMod.TINKERSCONSTRUCT)),
+
+    DR_NIKOLITE(new Builder("Fix Nikolite Injection (DR Change)")
+            .addMixinClasses("dragonrealm.MixinNikoliteInjectionHandler")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.DRAGONREALM)),
+
+    DR_THERMAL_COSTS(new Builder("Modify Thermal Expansion RF Cost (DR Change)")
+            .addMixinClasses("thermalexpansion.MixinRecipeSmelter")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.THERMALEXPANSION)),
+
+    BC_FUEL_POWER(new Builder("Expose powerPerCycle in BCFuel (DR Change)").addMixinClasses("buildcraft.MixinBCFuel")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.BUILDCRAFT)),
+    FORESTRY_FUEL_POWER(new Builder("Expose powerPerCycle in Forestry (DR Change)")
+            .addMixinClasses("forestry.MixinEngineBronzeFuel").setApplyIf(() -> Loader.isModLoaded("DragonRealmCore"))
+            .addTargetedMod(TargetedMod.FORESTRY)),
+
+    DR_SHUT_UP_STRONGHOLD_CACHE(new Builder("Shut up the annoying log spam (DR Change)")
+            .addMixinClasses("dragonrealm.MixinTerritoryStrongholdSystem")
+            .setApplyIf(() -> Loader.isModLoaded("DragonRealmCore")).addTargetedMod(TargetedMod.DRAGONREALM)),
 
     // MrTJPCore (Project Red)
     FIX_HUD_LIGHTING_GLITCH(new Builder("HUD Lighting glitch").addMixinClasses("mrtjpcore.MixinFXEngine")

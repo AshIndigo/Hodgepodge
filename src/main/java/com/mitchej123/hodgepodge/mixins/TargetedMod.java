@@ -6,10 +6,14 @@ public enum TargetedMod {
     BAUBLES("Baubles", null, "Baubles"),
     BIBLIOCRAFT("Bibliocraft", null, "BiblioCraft"),
     BOP("BiomesOPlenty", null, "BiomesOPlenty"),
+
+    BUILDCRAFT("Buildcraft", null, "BuildCraft|Energy"),
     BUKKIT("Bukkit/Thermos", "Bukkit", null),
     COFH_CORE("CoFHCore", "cofh.asm.LoadingPlugin", "CoFHCore"),
+    DRAGONREALM("DragonRealmCore", "Reika.DragonRealmCore.DragonRealmASM", "DragonRealmCore"),
     EXTRA_UTILITIES("ExtraUtilities", null, "ExtraUtilities"),
     FASTCRAFT("FastCraft", "fastcraft.Tweaker"),
+    FORESTRY("Forestry", "forestry.shade.javacheck.Java7Checker", "Forestry"),
     GALACTICRAFT_CORE("GalacticraftCore", "micdoodle8.mods.galacticraft.core.asm.GCLoadingPlugin", "GalacticraftCore"),
     GT5U("GregTech5u", null, "gregtech"), // Also matches GT6.
     GT6("GregTech6", "gregtech.asm.GT_ASM", "gregapi"), // Can be used to exclude GT6 from the GT5U target.
@@ -22,10 +26,13 @@ public enum TargetedMod {
     LWJGL3IFY("lwjgl3ify", "me.eigenraven.lwjgl3ify.core.Lwjgl3ifyCoremod", "lwjgl3ify"),
     MINECHEM("Minechem", null, "minechem"),
     MRTJPCORE("MrTJPCore", null, "MrTJPCoreMod"),
+    MYSTCRAFT("Mystcraft", null, "Mystcraft"),
     OPTIFINE("Optifine", "optifine.OptiFineForgeTweaker", "Optifine"),
     PROJECTE("ProjectE", null, "ProjectE"),
     RAILCRAFT("Railcraft", null, "Railcraft"),
     THAUMCRAFT("Thaumcraft", null, "Thaumcraft"), // "thaumcraft.codechicken.core.launch.DepLoader"
+
+    THERMALEXPANSION("Thermal Expansion", null, "ThermalExpansion"),
     TINKERSCONSTRUCT("TConstruct", null, "TConstruct"),
     TRAVELLERSGEAR("TravellersGear", null, "TravellersGear"),
     VANILLA("Minecraft", null),
